@@ -16,3 +16,53 @@ test "pepita vuela, se cansa y descansa"{
    // Comprobar que, luego de descansar, pepita ya no está cansada.
       assert.equals(false, pepita.estaCansada()) 
 }
+
+//EJERCICIO 2-3
+test "pepita vuela, se cansa y come alpiste"{
+   //Hacer que pepita vuele 900m, luego de eso está cansada (su energía se redujo a 0).
+   pepita.volar(900)
+   assert.equals(true, pepita.estaCansada())
+   //Hacer que pepita coma alpiste, sigue estando cansada (energía = 25 calorías).
+   pepita.comer(alpiste)
+   assert.equals(true, pepita.estaCansada())
+   //Nuevamente hacer que pepita coma alpiste y verificar que ya no está cansada (energía = 50 calorías).
+   pepita.comer(alpiste)
+   assert.equals(false, pepita.estaCansada())
+}
+
+//EJERCICIO 3-2
+test "pepita come alpiste y manzaza"{
+   pepita.comer(alpiste)
+   manzana.madurar()
+   pepita.comer(manzana)
+   assert.equals(140, pepita.energia())
+   manzana.madurar()
+   pepita.comer(alpiste)
+   assert.equals(160, pepita.energia())
+   manzana.madurar()
+   pepita.comer(manzana)
+   assert.equals(160, pepita.energia())  
+}
+
+//EJERCICIO 3-3
+test "pepita come manzana sin madurar"{
+//pepita come manzana sin madurar y vuela 200m
+   pepita.comer(manzana)
+   pepita.volar(200)
+   assert.equals(70, pepita.energia())
+//pepita come manzana madura y vuela 300m
+   manzana.madurar()
+   pepita.comer(manzana)
+   pepita.volar(300)
+   assert.equals(50, pepita.energia())
+//pepita come manzana muy madura y vuela 100m
+   manzana.madurar()
+   pepita.comer(manzana)
+   pepita.volar(100)
+   assert.equals(70, pepita.energia())
+//pepita come manzana podrida y vuela 300m
+   manzana.madurar()
+   pepita.comer(manzana)
+   pepita.volar(300)
+   assert.equals(30, pepita.energia())
+}
