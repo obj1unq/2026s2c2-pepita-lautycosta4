@@ -1,0 +1,18 @@
+//EJERCICIO 1-2
+test "pepita vuela, se cansa y descansa"{
+   //Hacer volar a pepita 200 m. Su energía ahora se decrementó en 30 calorías, quedando en 70 calorías.
+      pepita.volar(200)
+      assert.equals(70, pepita.energia())
+   // verificar que no está cansada.
+      assert.equals(false, pepita.estaCansada())
+   //Hacer volar a pepita otros 350 m, consumiendo 45 calorías adicionales para finalizar en 25 calorías.
+      pepita.volar(350)
+      assert.equals(25, pepita.energia())
+   // Ahora sí está cansada pepita.
+      assert.equals(true, pepita.estaCansada())
+   // Hacer que pepita descanse. Su energía aumenta 10 calorías, llegando a 35.
+      pepita.descansar()
+      assert.equals(35, pepita.energia())
+   // Comprobar que, luego de descansar, pepita ya no está cansada.
+      assert.equals(false, pepita.estaCansada()) 
+}
