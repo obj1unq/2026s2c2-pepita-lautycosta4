@@ -13,7 +13,7 @@ method descansar() {
  method energia() {
   return energia
  }
-//EJERCICIO 2
+//EJERCICIO 2-1, 2-2
  method comer(alimento) {
     energia=energia+alimento.caloriasqueaporta() 
   }
@@ -25,7 +25,7 @@ object alpiste {
   }
 }
 
-//EJERCICIO 3
+//EJERCICIO 3-1
 object manzana{
 var madurez = 0
 const caloriaBase = 20
